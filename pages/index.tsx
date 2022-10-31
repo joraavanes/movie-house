@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -14,149 +15,317 @@ export default function Home() {
 
           <div className="row mt-4">
 
-            <div className="col">
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <article className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..." />
+                <div className="card-body">
+                  <h2 className="h5" title={'Movie Title Movie Title Movie Title'}>Movie Title Movie Title Movie Title</h2>
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </article>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
               <div className="card movie-card">
                 <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..." />
                 <div className="card-body">
                   <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                  <button type="button" className="btn btn-primary btn-sm button-62">
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
                     Check out
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
-            <div className="col">
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
               <div className="card movie-card">
                 <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
                 <div className="card-body">
                   <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                  <button type="button" className="btn btn-primary btn-sm button-62">
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
                     Check out
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
-            <div className="col">
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
               <div className="card movie-card">
                 <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
                 <div className="card-body">
                   <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                  <button type="button" className="btn btn-primary btn-sm button-62">
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
                     Check out
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
-            <div className="col">
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
               <div className="card movie-card">
                 <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
                 <div className="card-body">
                   <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                  <button type="button" className="btn btn-primary btn-sm button-62">
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
                     Check out
-                  </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..." />
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..." />
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..." />
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..." />
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..." />
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
+              <div className="card movie-card">
+                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
+                <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                  <Link href={`/movie/1`} className="btn btn-primary btn-sm button-62">
+                    Check out
+                  </Link>
                 </div>
               </div>
             </div>
 
           </div>
-          <div className="row mt-4">
-
-            <div className="col">
-              <div className="card movie-card">
-                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..." />
-                <div className="card-body">
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                  <button type="button" className="btn btn-primary btn-sm button-62">
-                    Check out
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card movie-card">
-                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
-                <div className="card-body">
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                  <button type="button" className="btn btn-primary btn-sm button-62">
-                    Check out
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card movie-card">
-                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
-                <div className="card-body">
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                  <button type="button" className="btn btn-primary btn-sm button-62">
-                    Check out
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card movie-card">
-                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
-                <div className="card-body">
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                  <button type="button" className="btn btn-primary btn-sm button-62">
-                    Check out
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div className="row mt-4">
-
-            <div className="col">
-              <div className="card movie-card">
-                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..." />
-                <div className="card-body">
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cardes content.</p>
-                  <button type="button" className="btn btn-primary btn-sm button-62">
-                    Check out
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card movie-card">
-                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
-                <div className="card-body">
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                  <button type="button" className="btn btn-primary btn-sm button-62">
-                    Check out
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card movie-card">
-                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
-                <div className="card-body">
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                  <button type="button" className="btn btn-primary btn-sm button-62">
-                    Check out
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card movie-card">
-                <Image src={'/movie-1.jpg'} width={290} height={190} className="card-Image-top" alt="..."/>
-                <div className="card-body">
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                  <button type="button" className="btn btn-primary btn-sm button-62">
-                    Check out
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          
         </div>
 
       <footer className={styles.footer}>
