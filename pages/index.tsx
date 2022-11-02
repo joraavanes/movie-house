@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 import { Movie } from '../types';
 import styles from '../styles/Home.module.css'
+import Pagination from '../components/shared/Pagination';
 
 interface Home {
   movies: Movie[];
@@ -36,6 +37,10 @@ export default function Home({ movies }: Home) {
               </div>
             )) : null}
 
+          </div>
+          
+          <div className="row mt-5">
+            <Pagination itemsCount={250} currentPage={1}/>
           </div>
         </div>
 
