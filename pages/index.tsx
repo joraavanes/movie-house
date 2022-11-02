@@ -3,18 +3,11 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
+import { Movie } from '../types';
 import styles from '../styles/Home.module.css'
 
 interface Home {
-  movies: [{
-    id: number;
-    title: string;
-    poster: string;
-    year: string;
-    released: string;
-    plot: string;
-    genres: string[];
-  }]
+  movies: Movie[];
 }
 
 export default function Home({ movies }: Home) {

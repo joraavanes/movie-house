@@ -2,19 +2,10 @@ import axios from "axios";
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import MoviePreview from "../../components/Movie/Moviepreview";
+import { Movie } from "../../types";
 
 interface MoviePage {
-  movie: {
-    id: number;
-    title: string;
-    poster: string;
-    released: string;
-    director: string;
-    metascore: string;
-    genres: string[];
-    plot: string;
-    year: string;
-  };
+  movie: Movie;
 }
 
 const MoviePageWithSlug: React.FC<MoviePage> = ({movie}) => {
