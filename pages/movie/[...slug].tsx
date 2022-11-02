@@ -1,3 +1,4 @@
+import axios from "axios";
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import MoviePreview from "../../components/Movie/Moviepreview";
@@ -6,6 +7,13 @@ interface MoviePage {
   movie: {
     id: number;
     title: string;
+    poster: string;
+    released: string;
+    director: string;
+    metascore: string;
+    genres: string[];
+    plot: string;
+    year: string;
   };
 }
 
@@ -20,20 +28,17 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const id = slug[0];
   const title = slug[1];
 
-  console.log(slug);
-
   if(!id){
     return {
       notFound: true
     }
   }
 
+  const res = await axios.get(`https://moviesapi.ir/api/v1/movies/${id}`);
+
   return {
     props: {
-      movie: {
-        id,
-        title
-      }
+      movie: res.data
     },
   };
 };
