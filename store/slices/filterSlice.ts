@@ -15,6 +15,7 @@ const filterSlice = createSlice({
   initialState,
   reducers: {
     movieTitleChanged: (state, action) => {
+      state.genre = '';
       state.movieTitle = action.payload;
     },
     genreChanged: (state, action) => {
