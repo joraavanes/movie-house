@@ -6,15 +6,16 @@ import { genreChanged, movieTitleChanged } from "../store/slices/filterSlice";
 const Sidebar = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const filters = useAppSelector(state => state.filter);
+  const filters = useAppSelector((state) => state.filter);
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if(!filters.movieTitle)
-      return router.push('/');
+    if (!filters.movieTitle && !filters.genre) return router.push("/");
 
-    router.push(`/search?title=${filters.movieTitle}`);
+    filters.movieTitle
+      ? router.push(`/search?title=${filters.movieTitle}`)
+      : router.push(`/search?genre=${filters.genre}`);
   };
 
   return (
@@ -31,7 +32,7 @@ const Sidebar = () => {
               <input
                 type="text"
                 value={filters.movieTitle}
-                onChange={(e) => dispatch(movieTitleChanged((e.target.value)))}
+                onChange={(e) => dispatch(movieTitleChanged(e.target.value))}
                 className="form-control form-control-sm"
                 id="title"
                 placeholder="Search by title e.g The Matrix"
@@ -45,15 +46,34 @@ const Sidebar = () => {
               <select
                 className="form-select form-select-sm mb-3"
                 aria-label=".form-select-lg example"
-                defaultValue={"selected"}
-                onChange={e => dispatch(genreChanged(e.target.value))}
+                defaultValue={""}
+                value={filters.genre}
+                onChange={(e) => dispatch(genreChanged(e.target.value))}
               >
-                <option value="selected" disabled>
+                <option value="" disabled>
                   Select a genre
                 </option>
-                <option value="1">Sci-Fi</option>
+                <option value="1">Crime</option>
                 <option value="2">Drama</option>
-                <option value="3">Thriller</option>
+                <option value="3">Action</option>
+                <option value="4">Biography</option>
+                <option value="5">History</option>
+                <option value="6">Adventure</option>
+                <option value="7">Fantasy</option>
+                <option value="8">Western</option>
+                <option value="9">Comedy</option>
+                <option value="10">Sci-Fi</option>
+                <option value="11">Mystery</option>
+                <option value="12">Thriller</option>
+                <option value="13">Family</option>
+                <option value="14">War</option>
+                <option value="15">Animation</option>
+                <option value="16">Romance</option>
+                <option value="17">Horror</option>
+                <option value="18">Music</option>
+                <option value="19">Film-Noir</option>
+                <option value="20">Musical</option>
+                <option value="21">Sport</option>
               </select>
             </div>
             <div className="mb-3">
