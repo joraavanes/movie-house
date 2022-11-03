@@ -9,9 +9,10 @@ import MovieList from "../components/Movie/MovieList";
 
 interface Home {
   movies: Movie[];
+  moviesCount: number;
 }
 
-export default function Home({ movies }: Home) {
+export default function Home({ movies, moviesCount }: Home) {
   return (
     <>
       <Head>
@@ -25,7 +26,7 @@ export default function Home({ movies }: Home) {
         </div>
 
         <div className="row mt-5">
-          <Pagination itemsCount={250} currentPage={1} />
+          <Pagination itemsCount={moviesCount} currentPage={1} />
         </div>
       </div>
 
@@ -56,6 +57,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       movies: [...data[0], ...data[1], ...data[2]],
+      moviesCount: res[0].data.metadata.total_count
     },
   };
 };

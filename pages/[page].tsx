@@ -7,10 +7,11 @@ import { Movie } from "../types";
 
 interface Page {
   movies: Movie[];
+  moviesCount: number;
   page: number;
 }
 
-const Page: React.FC<Page> = ({ movies, page }) => {
+const Page: React.FC<Page> = ({ movies, page, moviesCount }) => {
   return (
     <>
       <div className="xs-12 col-sm-7 col-md-9 col-xl-10">
@@ -18,7 +19,7 @@ const Page: React.FC<Page> = ({ movies, page }) => {
           <MovieList movies={movies}/>
         </div>
         <div className="row mt-5">
-          <Pagination itemsCount={250} currentPage={page} />
+          <Pagination itemsCount={moviesCount} currentPage={page} />
         </div>
       </div>
     </>
@@ -45,6 +46,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       page,
       movies: [...data[0], ...data[1], ...data[2]],
+      moviesCount: res[0].data.metadata.total_count
     },
   };
 };
