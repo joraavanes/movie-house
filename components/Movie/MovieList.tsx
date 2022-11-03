@@ -13,6 +13,6 @@ const MovieList: React.FC<MovieList> = ({ movies }) =>
         <MovieItem movie={movie} key={movie.id} />
       ))}
     </>
-  ) : null;
+  ) : <p>No movies found!!</p>;
 
 export default MovieList;
