@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/router";
+import { useAppDispatch, useAppSelector } from "../hooks/stateHooks";
+import { genreChanged, movieTitleChanged } from "../store/slices/filterSlice";
 
 const Sidebar = () => {
   const router = useRouter();
-  const [movieTitle, setMovieTitle] = useState("");
+  const dispatch = useAppDispatch();
+  const filters = useAppSelector(state => state.filter);
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if(!movieTitle)
+    if(!filters.movieTitle)
       return router.push('/');
 
-    router.push(`/search?title=${movieTitle}`);
+    router.push(`/search?title=${filters.movieTitle}`);
   };
 
   return (
@@ -27,8 +30,8 @@ const Sidebar = () => {
               </label>
               <input
                 type="text"
-                value={movieTitle}
-                onChange={(e) => setMovieTitle(e.target.value)}
+                value={filters.movieTitle}
+                onChange={(e) => dispatch(movieTitleChanged((e.target.value)))}
                 className="form-control form-control-sm"
                 id="title"
                 placeholder="Search by title e.g The Matrix"
@@ -42,7 +45,8 @@ const Sidebar = () => {
               <select
                 className="form-select form-select-sm mb-3"
                 aria-label=".form-select-lg example"
-                defaultValue={"select"}
+                defaultValue={"selected"}
+                onChange={e => dispatch(genreChanged(e.target.value))}
               >
                 <option value="selected" disabled>
                   Select a genre
