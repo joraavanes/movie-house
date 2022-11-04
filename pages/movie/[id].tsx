@@ -11,7 +11,7 @@ interface MoviePage {
 const MoviePage: React.FC<MoviePage> = ({ movie }) => {
   return (
     <>
-      <MoviePreview {...movie} />
+      <MoviePreview movie={movie}/>
     </>
   );
 };

@@ -10,7 +10,7 @@ interface MoviePage {
 
 const MoviePageWithSlug: React.FC<MoviePage> = ({movie}) => {
   return <>
-    <MoviePreview {...movie}/>
+    <MoviePreview movie={movie}/>
   </>;
 };
 
