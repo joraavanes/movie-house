@@ -19,12 +19,12 @@ const userProfile = createSlice({
       state.watchLater = action.payload.watchLater;
     },
     favoriteMovieToggle: (state, action) => {
-      state.favorites.includes(action.payload) ?
+      !state.favorites.includes(action.payload) ?
         state.favorites = state.favorites.concat(action.payload) :
         state.favorites = state.favorites.filter(f => f !== action.payload);
     },
     watchLaterToggle: (state, action) => {
-      state.watchLater.includes(action.payload) ?
+      !state.watchLater.includes(action.payload) ?
         state.watchLater = state.watchLater.concat(action.payload) :
         state.watchLater = state.watchLater.filter(f => f !== action.payload);
     }
