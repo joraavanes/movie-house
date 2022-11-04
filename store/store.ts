@@ -7,3 +7,8 @@ export const store = configureStore({
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
+store.subscribe(() => {
+  const state = store.getState().userProfile;
+  window.localStorage.setItem('movie-house-user-profile', JSON.stringify(state));
+});
