@@ -1,13 +1,27 @@
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
+import { useAppDispatch, useAppSelector } from "../../hooks/stateHooks";
 import { Movie } from "../../types";
+import {
+  favoriteMovieToggle,
+  watchLaterToggle,
+} from "../../store/slices/userProfileSlice";
 
 interface MoviePreview {
   movie: Movie;
 }
 
 const MoviePreview: React.FC<MoviePreview> = ({ movie }) => {
+  const userProfile = useAppSelector((state) => state.userProfile);
+  const dispatch = useAppDispatch();
+
+  const handleFavoriteBtn = (e: React.MouseEvent<HTMLButtonElement>) =>
+    dispatch(favoriteMovieToggle(movie.id));
+
+  const handleWatchLaterBtn = (e: React.MouseEvent<HTMLButtonElement>) =>
+    dispatch(watchLaterToggle(movie.id));
+
   return (
     <>
       <Head>
@@ -29,7 +43,25 @@ const MoviePreview: React.FC<MoviePreview> = ({ movie }) => {
                 <b>Released:</b> {movie.released}
               </p>
               <p>{movie.plot}</p>
-              <button className="button button-62">Watch later</button>
+              <button
+                className="button button-62"
+                onClick={handleWatchLaterBtn}
+              >
+                {userProfile.watchLater.includes(movie.id) ? (
+                  <i>Gonna watch it</i>
+                ) : (
+                  <i>Watch later</i>
+                )}
+              </button>
+              <h4>
+                <button onClick={handleFavoriteBtn}>
+                  {userProfile.favorites.includes(movie.id) ? (
+                    <i className="bi bi-heart-fill"></i>
+                  ) : (
+                    <i className="bi bi-heart"></i>
+                  )}
+                </button>
+              </h4>
             </div>
           </div>
           <div className="col-xs-12 col-md-4 mb-4">
