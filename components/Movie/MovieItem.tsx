@@ -24,7 +24,7 @@ const MovieItem: React.FC<MovieItem> = ({ movie }) => {
           </h2>
           <p className="card-text">{movie.plot}</p>
           <Link
-            href={`/movie/${movie.id}`}
+            href={`/movie/${movie.id}/${movie.title.toLowerCase().replaceAll(' ', '-')}`}
             className="btn btn-primary btn-sm button-62"
           >
             Check out
