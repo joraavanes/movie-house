@@ -56,6 +56,29 @@ a {
   height: 100%;
 }
 
+.badge-info{
+  color: #fff;
+  background-color: #17a2b8;
+}
+
+.bi-heart-fill{
+  color: red;
+}
+
+.float-right{
+  float:right;
+}
+
+@media screen and (min-width: 767px) {
+  .float-md-right{
+    float:right;
+  }
+}
+
+.display-6{
+  font-size: 1.75rem;
+}
+
 .button-62 {
   background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
   border: 0;
