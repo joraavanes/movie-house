@@ -18,10 +18,10 @@ const MoviePreview: React.FC<MoviePreview> = ({ movie }) => {
   const dispatch = useAppDispatch();
 
   const handleFavoriteBtn = (e: React.MouseEvent<HTMLElement>) =>
-    dispatch(favoriteMovieToggle(movie.id));
+    dispatch(favoriteMovieToggle({id: movie.id, title: movie.title, poster: movie.poster}));
 
   const handleWatchLaterBtn = (e: React.MouseEvent<HTMLButtonElement>) =>
-    dispatch(watchLaterToggle(movie.id));
+    dispatch(watchLaterToggle({id: movie.id, title: movie.title, poster: movie.poster}));
 
   return (
     <>
@@ -51,7 +51,7 @@ const MoviePreview: React.FC<MoviePreview> = ({ movie }) => {
                   className="text-center h2 pointer-cursor"
                   role="button"
                 >
-                  {userProfile.favorites.includes(movie.id) ? (
+                  {userProfile.favorites.findIndex(m => m.id === movie.id) >= 0 ? (
                     <i className="bi bi-heart-fill"></i>
                   ) : (
                     <i className="bi bi-heart"></i>
@@ -102,7 +102,7 @@ const MoviePreview: React.FC<MoviePreview> = ({ movie }) => {
                 className="button button-62"
                 onClick={handleWatchLaterBtn}
               >
-                {userProfile.watchLater.includes(movie.id) ? (
+                {userProfile.watchLater.findIndex(m => m.id === movie.id) >= 0 ? (
                   <i>Gonna watch it</i>
                 ) : (
                   <i>Watch later</i>
