@@ -9,7 +9,9 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
       <h1 className={`${styles.emblem} navbar-brand mx-4`}>
-        Movie House
+        <Link href={'/'}>
+          Movie House
+        </Link>
       </h1>
       <button
         className="navbar-toggler"
