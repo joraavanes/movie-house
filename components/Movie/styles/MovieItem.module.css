@@ -1,0 +1,21 @@
+.title {
+  font-size: 1.15rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.badgeSecondary {
+  display: inline-block;
+  padding: .25em .4em;
+  margin: .01em .1em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  background-color: #6c757d;
+  color: #fff;
+}
