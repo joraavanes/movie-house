@@ -11,7 +11,7 @@ const Pagination: React.FC<Pagination> = ({ currentPage, itemsCount }) => {
 
   useEffect(() => {
     setPagesCount(Math.ceil(itemsCount / 30));
-  }, []);
+  }, [itemsCount]);
 
   return (
     <div>

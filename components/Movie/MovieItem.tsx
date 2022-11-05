@@ -28,7 +28,7 @@ const MovieItem: React.FC<MovieItem> = ({ movie }) => {
             {movie.title}
           </h2>
           <p>
-            {movie?.genres?.map(genre => <span className={styles.badgeSecondary}>{genre}</span>)}
+            {movie?.genres?.map(genre => <span className={styles.badgeSecondary} key={genre}>{genre}</span>)}
           </p>
           <Link
             href={`/movie/${movie.id}/${movie.title.toLowerCase().replaceAll(' ', '-')}`}

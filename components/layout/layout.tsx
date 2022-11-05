@@ -17,7 +17,7 @@ const Layout: React.FC<Layout> = ({ children }) => {
     const userProfileState = localStorage.getItem("movie-house-user-profile");
     if (userProfileState) dispatch(initUserProfile(JSON.parse(userProfileState)));
 
-  }, []);
+  }, [dispatch]);
 
   return (
     <main className="container-fluid position-relative">

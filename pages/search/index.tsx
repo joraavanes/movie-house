@@ -15,7 +15,7 @@ const SearchPage: React.FC<SearchPage> = ({ movies, title, genre }) => {
   return (
     <>
       <Head>
-        <title>Searching for "{title}" | Movie House</title>
+        <title>Searching for &quot;{title}&quot; | Movie House</title>
       </Head>
       <div className="xs-12 col-sm-7 col-md-9 col-xl-10">
         <div className="row mt-4">
