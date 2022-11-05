@@ -1,5 +1,6 @@
 import axios from "axios";
 import { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
 import React from "react";
 import MovieList from "../components/Movie/MovieList";
 import Pagination from "../components/shared/Pagination";
@@ -14,6 +15,9 @@ interface Page {
 const Page: React.FC<Page> = ({ movies, page, moviesCount }) => {
   return (
     <>
+      <Head>
+        <title>{`Movie House | page ${page}`}</title>
+      </Head>
       <div className="xs-12 col-sm-7 col-md-9 col-xl-10">
         <div className="row mt-4">
           <MovieList movies={movies}/>
