@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { useAppDispatch, useAppSelector } from "../hooks/stateHooks";
-import { genreChanged, movieTitleChanged } from "../store/slices/filterSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks/stateHooks";
+import { genreChanged, movieTitleChanged } from "../../store/slices/filterSlice";
 
 const Sidebar = () => {
   const router = useRouter();
