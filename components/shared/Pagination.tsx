@@ -22,7 +22,7 @@ const Pagination: React.FC<Pagination> = ({
 
   return (
     <div>
-      <ul className="pagination">
+      <ul className="pagination justify-content-center">
         {Array(pagesCount)
           .fill(undefined)
           .map((item, index) => (

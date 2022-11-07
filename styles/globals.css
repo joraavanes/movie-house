@@ -60,6 +60,15 @@ a {
   font-size: 1.75rem;
 }
 
+.page-link{
+  color: #666;
+}
+
+.page-link.active{
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  color: #FFFFFF;
+}
+
 .button-62 {
   background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
   border: 0;
