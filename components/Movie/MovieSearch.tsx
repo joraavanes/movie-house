@@ -34,6 +34,7 @@ const Sidebar = () => {
                 value={filters.movieTitle}
                 onChange={(e) => dispatch(movieTitleChanged(e.target.value))}
                 className="form-control form-control-sm"
+                name="title"
                 id="title"
                 placeholder="Search by title e.g The Matrix"
               />
@@ -44,6 +45,8 @@ const Sidebar = () => {
                 Genre
               </label>
               <select
+                name="genre"
+                id="genre"
                 className="form-select form-select-sm mb-3"
                 aria-label=".form-select-lg example"
                 defaultValue={""}
