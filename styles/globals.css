@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
 html,
 body {
   padding: 0;
@@ -13,6 +15,19 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 8rem;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
