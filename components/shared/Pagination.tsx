@@ -26,7 +26,12 @@ const Pagination: React.FC<Pagination> = ({
         {Array(pagesCount)
           .fill(undefined)
           .map((item, index) => (
-            <li className="page-item" key={index}>
+            <li
+              className={
+                currentPage - 1 === index ? "page-item active" : "page-item"
+              }
+              key={index}
+            >
               <Link
                 className={
                   currentPage - 1 === index ? "page-link active" : "page-link"
