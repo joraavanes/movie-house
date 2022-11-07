@@ -47,6 +47,8 @@ footer {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+
+
 .movie-poster{
   width: 100%;
   height: 100%;
@@ -71,6 +73,12 @@ footer {
   }
 }
 
+@media screen and (max-width: 576px) {
+  .custom-card{
+    margin-top: 0;
+  }
+}
+
 .display-6{
   font-size: 1.75rem;
 }
@@ -82,6 +90,10 @@ footer {
 .page-link.active{
   background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
   color: #FFFFFF;
+}
+
+.navbar-nav{
+  flex-direction: row;
 }
 
 .button-62 {

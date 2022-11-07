@@ -13,26 +13,15 @@ const Navbar = () => {
           Movie House
         </Link>
       </h1>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse mx-4 justify-content-end" id="navbarNavAltMarkup">
+      <div className=" mx-4 justify-content-end" id="navbarNavAltMarkup">
         <div className="navbar-nav">
-          <Link href={"/"} className={`nav-item nav-link ${router.route === '/' ? 'active' : null}`}>
+          <Link href={"/"} className={`nav-item mx-2 nav-link ${router.route === '/' ? 'active' : null}`}>
             Home 
           </Link>
-          <Link href={"/mymovies/favorites"} className={`nav-item nav-link ${router.route === '/mymovies/favorites' ? 'active' : null}`}>
+          <Link href={"/mymovies/favorites"} className={`nav-item mx-2 nav-link ${router.route === '/mymovies/favorites' ? 'active' : null}`}>
             Favorites
           </Link>
-          <Link href={"/mymovies/watchlater"} className={`nav-item nav-link ${router.route === '/mymovies/watchlater' ? 'active' : null}`}>
+          <Link href={"/mymovies/watchlater"} className={`nav-item mx-2 nav-link ${router.route === '/mymovies/watchlater' ? 'active' : null}`}>
             Watch Later
           </Link>
         </div>
