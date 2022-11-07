@@ -11,7 +11,7 @@ interface MovieItem {
 const MovieItem: React.FC<MovieItem> = ({ movie }) => {
   return (
     <div className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 mt-3">
-      <article className={`card ${styles.movieCard}`}>
+      <article className={`card box ${styles.movieCard}`}>
         <Link
           href={`/movie/${movie.id}/${movie.title.toLowerCase().replaceAll(' ', '-')}`}
         >
