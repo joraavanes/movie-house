@@ -13,3 +13,21 @@
   color: #f07d5e;
   text-decoration: none;
 }
+
+@media screen and (max-width: 500px) {
+  .emblem {
+    width: 100%;
+    text-align: center;
+  } 
+}
+
+
+@media screen and (max-width: 500px) {
+  .navigation{
+    width: 100%;
+  }
+
+  .navigation > div{
+    justify-content: space-around;
+  }
+}

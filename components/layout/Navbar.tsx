@@ -13,7 +13,7 @@ const Navbar = () => {
           Movie House
         </Link>
       </h1>
-      <div className=" mx-4 justify-content-end" id="navbarNavAltMarkup">
+      <div className={`mx-4 justify-content-end ${styles.navigation}`} id="navbarNavAltMarkup">
         <div className="navbar-nav">
           <Link href={"/"} className={`nav-item mx-2 nav-link ${router.route === '/' ? 'active' : null}`}>
             Home 

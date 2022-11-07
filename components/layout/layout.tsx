@@ -3,8 +3,9 @@ import Link from "next/link";
 import MovieSearch from "../Movie/MovieSearch";
 import { useAppDispatch } from "../../hooks/stateHooks";
 import { initUserProfile } from "../../store/slices/userProfileSlice";
-import styles from './styles/Layout.module.css';
+import styles from "./styles/Layout.module.css";
 import Navbar from "./Navbar";
+import Head from "next/head";
 
 interface Props {
   children?: JSX.Element[] | JSX.Element;
@@ -17,15 +18,18 @@ const Layout: React.FC<Layout> = ({ children }) => {
 
   useEffect(() => {
     const userProfileState = localStorage.getItem("movie-house-user-profile");
-    if (userProfileState) dispatch(initUserProfile(JSON.parse(userProfileState)));
-
+    if (userProfileState)
+      dispatch(initUserProfile(JSON.parse(userProfileState)));
   }, [dispatch]);
 
   return (
     <>
+      <Head>
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+      </Head>
       <main className="container-fluid position-relative">
         <div className="row">
-          <Navbar/>
+          <Navbar />
         </div>
         <div className="row">
           <MovieSearch />
@@ -34,9 +38,7 @@ const Layout: React.FC<Layout> = ({ children }) => {
       </main>
 
       <footer className={styles.footer}>
-        <Link
-          href={"/"}
-        >
+        <Link href={"/"}>
           Powered by
           <span className={styles.emblemSmall}>Movie House</span>
         </Link>
