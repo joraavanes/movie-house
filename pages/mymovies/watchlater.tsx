@@ -1,13 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import MovieList from '../../components/Movie/MovieList';
+import { Movie } from '../../types';
 
-const WatchLater = () => {
-  const [favoriteMovies, setWatchLater] = useState([]);
+interface State {
+  favorites: Movie[];
+  watchLater: Movie[];
+}
 
+const initialValue: State = {
+  favorites: [],
+  watchLater: []
+}
+
+const WatchLater: React.FC = () => {
+  const [userProfile, setUserProfile] = useState(initialValue);
+  
   useEffect(() => {
-    const localState = window.localStorage.getItem("movie-house-user-profile")!;
-    const userProfile = JSON.parse(localState);
-    setWatchLater(userProfile.watchLater);
+    const localState = localStorage.getItem("movie-house-user-profile");
+    if(localState){
+      const userProfile = JSON.parse(localState);
+      setUserProfile(userProfile);
+    }
   }, []);
 
   return (
@@ -15,7 +28,7 @@ const WatchLater = () => {
       <div className="xs-12 col-sm-7 col-md-9 col-xl-10">
         <div className="row mt-4">
           <h3>Watch Later</h3>
-          <MovieList movies={favoriteMovies} />
+          <MovieList movies={userProfile.watchLater} />
         </div>
       </div>
     </>
