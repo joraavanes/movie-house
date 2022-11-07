@@ -4,14 +4,17 @@ import axios from "axios";
 import { Movie } from "../../types";
 import MovieList from "../../components/Movie/MovieList";
 import Head from "next/head";
+import Pagination from "../../components/shared/Pagination";
 
 interface SearchPage {
   movies: Movie[];
   title: string;
   genre: string;
+  moviesCount: number;
+  page: number;
 }
 
-const SearchPage: React.FC<SearchPage> = ({ movies, title, genre }) => {
+const SearchPage: React.FC<SearchPage> = ({ movies, title, genre, moviesCount, page }) => {
   return (
     <>
       <Head>
@@ -23,6 +26,15 @@ const SearchPage: React.FC<SearchPage> = ({ movies, title, genre }) => {
             <span className="badge badge-info">{title}</span>
           </h3>
           <MovieList movies={movies} />
+        </div>
+
+        <div className="row mt-5">
+          <Pagination 
+            itemsCount={moviesCount} 
+            itemsCountPerPage={10}
+            currentPage={page} 
+            url={`search?genre=${genre}&page=`}
+          />
         </div>
       </div>
     </>
@@ -48,8 +60,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       movies: res.data.data,
+      moviesCount: res.data.metadata.total_count,
       title,
-      genre
+      genre,
+      page
     },
   };
 };
