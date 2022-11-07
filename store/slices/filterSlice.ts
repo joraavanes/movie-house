@@ -3,11 +3,13 @@ import { createSlice } from '@reduxjs/toolkit';
 interface filterSliceState {
   movieTitle: string;
   genre: string;
+  genreTitle: string;
 }
 
 const initialState: filterSliceState = {
   movieTitle: '',
-  genre: ''
+  genre: '',
+  genreTitle: ''
 }
 
 const filterSlice = createSlice({
@@ -20,7 +22,8 @@ const filterSlice = createSlice({
     },
     genreChanged: (state, action) => {
       state.movieTitle = '';
-      state.genre = action.payload;
+      state.genre = action.payload.genre;
+      state.genreTitle = action.payload.genreTitle;
     },
   }
 })

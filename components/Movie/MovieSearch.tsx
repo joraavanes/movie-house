@@ -15,7 +15,7 @@ const Sidebar = () => {
 
     filters.movieTitle
       ? router.push(`/search?title=${filters.movieTitle}`)
-      : router.push(`/search?genre=${filters.genre}`);
+      : router.push(`/search?genre=${filters.genre}&genreTitle=${filters.genreTitle}`);
   };
 
   return (
@@ -47,8 +47,17 @@ const Sidebar = () => {
                 className="form-select form-select-sm mb-3"
                 aria-label=".form-select-lg example"
                 defaultValue={""}
-                value={filters.genre}
-                onChange={(e) => dispatch(genreChanged(e.target.value))}
+                // value={filters.genre}
+                onChange={(e) => {
+                  const genre = e.target.value;
+                  const genreTitle = e.target.options[Number(genre)].text;
+                  dispatch(
+                    genreChanged({
+                      genre,
+                      genreTitle
+                    })
+                  )
+                }}
               >
                 <option value="" disabled>
                   Select a genre

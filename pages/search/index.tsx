@@ -10,30 +10,39 @@ interface SearchPage {
   movies: Movie[];
   title: string;
   genre: string;
+  genreTitle: string;
   moviesCount: number;
   page: number;
 }
 
-const SearchPage: React.FC<SearchPage> = ({ movies, title, genre, moviesCount, page }) => {
+const SearchPage: React.FC<SearchPage> = ({
+  movies,
+  title,
+  genre,
+  genreTitle,
+  moviesCount,
+  page,
+}) => {
   return (
     <>
       <Head>
-        <title>Searching for &quot;{title}&quot; | Movie House</title>
+        <title>Looking for &quot;{title || genreTitle}&quot; | Movie House</title>
       </Head>
       <div className="xs-12 col-sm-7 col-md-9 col-xl-10">
         <div className="row mt-4">
-          <h3>Searching for{' '}
-            <span className="badge badge-info">{title}</span>
+          <h3>
+            Looking for{" "}
+            <span className="badge badge-info">{title || genreTitle}</span>
           </h3>
           <MovieList movies={movies} />
         </div>
 
         <div className="row mt-5">
-          <Pagination 
-            itemsCount={moviesCount} 
+          <Pagination
+            itemsCount={moviesCount}
             itemsCountPerPage={10}
-            currentPage={page} 
-            url={`search?genre=${genre}&page=`}
+            currentPage={page}
+            url={`search?genre=${genre}&genreTitle=${genreTitle}&page=`}
           />
         </div>
       </div>
@@ -42,7 +51,7 @@ const SearchPage: React.FC<SearchPage> = ({ movies, title, genre, moviesCount, p
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { title = '', genre = '', page = 1 } = context.query;
+  const { title = "", genre = "", genreTitle = "", page = 1 } = context.query;
 
   if (!title && !genre)
     return {
@@ -52,10 +61,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
 
   let res;
-  if(title)
+  if (title)
     res = await axios.get(`https://moviesapi.ir/api/v1/movies?q=${title}`);
-  else 
-    res = await axios.get(`https://moviesapi.ir/api/v1/genres/${genre}/movies?page=${page}`);
+  else
+    res = await axios.get(
+      `https://moviesapi.ir/api/v1/genres/${genre}/movies?page=${page}`
+    );
 
   return {
     props: {
@@ -63,7 +74,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       moviesCount: res.data.metadata.total_count,
       title,
       genre,
-      page
+      genreTitle,
+      page,
     },
   };
 };
