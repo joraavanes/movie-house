@@ -81,7 +81,7 @@ const MoviePreview: React.FC<MoviePreview> = ({ movie }) => {
 
               <p>
                 <b>Genres:</b>{" "}
-                <em>{movie.genres.map((genre) => genre).join(", ")}</em>
+                <em>{movie.genres?.map((genre) => genre).join(", ")}</em>
               </p>
 
               <p>
@@ -101,6 +101,7 @@ const MoviePreview: React.FC<MoviePreview> = ({ movie }) => {
               <button
                 className="button button-62"
                 onClick={handleWatchLaterBtn}
+                role="button"
               >
                 {userProfile.watchLater.findIndex(m => m.id === movie.id) >= 0 ? (
                   <i>Gonna watch it</i>
