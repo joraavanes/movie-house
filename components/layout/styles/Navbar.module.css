@@ -5,6 +5,12 @@
   font-size: 1.5rem;
 }
 
-.emblem a:hover{
+.emblemAnchor{
+  color: #666;
+  text-decoration: none;
+}
+
+.emblemAnchor:hover{
   color: #f07d5e;
+  text-decoration: none;
 }

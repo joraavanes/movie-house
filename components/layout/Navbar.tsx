@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
       <h1 className={`${styles.emblem} navbar-brand mx-4`} title="Movie house">
-        <Link href={'/'}>
+        <Link href={'/'} className={styles.emblemAnchor}>
           Movie House
         </Link>
       </h1>
