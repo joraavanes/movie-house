@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
-      <h1 className={`${styles.emblem} navbar-brand mx-4`}>
+      <h1 className={`${styles.emblem} navbar-brand mx-4`} title="Movie house">
         <Link href={'/'}>
           Movie House
         </Link>
@@ -26,15 +26,15 @@ const Navbar = () => {
       </button>
       <div className="collapse navbar-collapse mx-4 justify-content-end" id="navbarNavAltMarkup">
         <div className="navbar-nav">
-          <Link href="/" className={`nav-item nav-link ${router.route === '/' ? 'active' : null}`}>
+          <Link href={"/"} className={`nav-item nav-link ${router.route === '/' ? 'active' : null}`}>
             Home 
           </Link>
-          <a className={`nav-item nav-link ${router.route === '/favorites' ? 'active' : null}`} href="#">
+          <Link href={"/mymovies/favorites"} className={`nav-item nav-link ${router.route === '/mymovies/favorites' ? 'active' : null}`}>
             Favorites
-          </a>
-          <a className={`nav-item nav-link ${router.route === '/watchlater' ? 'active' : null}`} href="#">
+          </Link>
+          <Link href={"/mymovies/watchlater"} className={`nav-item nav-link ${router.route === '/mymovies/watchlater' ? 'active' : null}`}>
             Watch Later
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
