@@ -1,34 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <h1 align="center">Movie House</h1>
+</div>
 
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![movie-house.jpg](https://i.postimg.cc/NMgCb8Gf/movie-house.jpg)](https://postimg.cc/5HRm2CFZ)
+
+<div align="center">
+  <p align="center">
+    <a href="https://admiring-franklin-k8vjxuhci.iran.liara.run/">View Demo</a>
+  </p>
+</div>
+
+Movie House is where you can explore among many famous movies, get the info about movies and the awards, and choose to keep in your archive to watch it later.
+
+This app uses a public API to fetch data from, the link is as follows:
+
+[moviesapi.ir/](https://moviesapi.ir//)
+
+Quick note about the API:
+* Moviesapi doesn't hold large archive of data as [TMDB](https://www.themoviedb.org/) or [IMDB](https://developer.imdb.com/) API
+* Some endpoints are not so user-friendly e.g. it doesn't give option to get the desired number of items per page, (so it requires multiple requests which is not so optimal)
+* The API doesn't require a key to get it working
+
+You can check the live demo here: [Demo](https://admiring-franklin-k8vjxuhci.iran.liara.run/)
+
+
+<!-- GETTING STARTED -->
 ## Getting Started
 
-First, run the development server:
+To get the app running on your machine, follow these simple steps.
+
+### Prerequisites
+
+Make sure you have node installed locally.
+* [Nodejs](https://nodejs.org/en/download/)
+
+### Installation
+
+1. Clone the repo:
+   ```sh
+   git clone git@github.com:joraavanes/movie-house.git
+   ```
+2. Install node packages using npm or yarn:
+   ```sh
+   npm install
+   ```
+   ```sh
+   yarn install
+   ```
+3. Run the app in dev environment
+   ```sh
+   yarn run dev
+   ```
+
+
+<!-- Running Tests -->
+## Running Unit Tests
+
+To run tests, run the following command
 
 ```bash
-npm run dev
-# or
-yarn dev
+  yarn run test
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
