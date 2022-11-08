@@ -34,13 +34,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const page = Number(context.params?.page);
 
   const fetch1 = axios.get(
-    `https://moviesapi.ir/api/v1/movies?page=${page * 3 - 2}`
+    `${process.env.API_BASE_URL}/api/v1/movies?page=${page * 3 - 2}`
   );
   const fetch2 = axios.get(
-    `https://moviesapi.ir/api/v1/movies?page=${page * 3 - 1}`
+    `${process.env.API_BASE_URL}/api/v1/movies?page=${page * 3 - 1}`
   );
   const fetch3 = axios.get(
-    `https://moviesapi.ir/api/v1/movies?page=${page * 3}`
+    `${process.env.API_BASE_URL}/api/v1/movies?page=${page * 3}`
   );
 
   const res = await Promise.all([fetch1, fetch2, fetch3]);

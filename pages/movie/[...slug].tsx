@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     }
   }
 
-  const res = await axios.get(`https://moviesapi.ir/api/v1/movies/${id}`);
+  const res = await axios.get(`${process.env.API_BASE_URL}/api/v1/movies/${id}`);
 
   return {
     props: {

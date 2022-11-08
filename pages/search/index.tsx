@@ -62,10 +62,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   let res;
   if (title)
-    res = await axios.get(`https://moviesapi.ir/api/v1/movies?q=${title}`);
+    res = await axios.get(`${process.env.API_BASE_URL}/api/v1/movies?q=${title}`);
   else
     res = await axios.get(
-      `https://moviesapi.ir/api/v1/genres/${genre}/movies?page=${page}`
+      `${process.env.API_BASE_URL}/api/v1/genres/${genre}/movies?page=${page}`
     );
 
   return {

@@ -32,9 +32,9 @@ export default function Home({ movies, moviesCount }: Home) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const fetch1 = axios.get("https://moviesapi.ir/api/v1/movies?page=1");
-  const fetch2 = axios.get("https://moviesapi.ir/api/v1/movies?page=2");
-  const fetch3 = axios.get("https://moviesapi.ir/api/v1/movies?page=3");
+  const fetch1 = axios.get(`${process.env.API_BASE_URL}/api/v1/movies?page=1`);
+  const fetch2 = axios.get(`${process.env.API_BASE_URL}/api/v1/movies?page=2`);
+  const fetch3 = axios.get(`${process.env.API_BASE_URL}/api/v1/movies?page=3`);
 
   const res = await Promise.all([fetch1, fetch2, fetch3]);
   const data = res.map((fetchItem) => fetchItem.data.data);
