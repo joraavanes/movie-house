@@ -23,10 +23,14 @@ const SearchPage: React.FC<SearchPage> = ({
   moviesCount,
   page,
 }) => {
+  const pageTitle = `Looking for \"${title || genreTitle}\" | Movie House`;
+
   return (
     <>
       <Head>
-        <title>Looking for &quot;{title || genreTitle}&quot; | Movie House</title>
+        <title>
+          {pageTitle}
+        </title>
       </Head>
       <div className="xs-12 col-sm-7 col-md-9 col-xl-10">
         <div className="row mt-4">
@@ -60,13 +64,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       },
     };
 
-  let res;
-  if (title)
-    res = await axios.get(`${process.env.API_BASE_URL}/api/v1/movies?q=${title}`);
-  else
-    res = await axios.get(
-      `${process.env.API_BASE_URL}/api/v1/genres/${genre}/movies?page=${page}`
-    );
+  let endpoint;
+  if (title) 
+    endpoint = `${process.env.API_BASE_URL}/api/v1/movies?q=${title}`;
+  else 
+    endpoint = `${process.env.API_BASE_URL}/api/v1/genres/${genre}/movies?page=${page}`;
+
+  const res = await axios.get(endpoint);
 
   return {
     props: {
