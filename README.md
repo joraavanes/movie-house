@@ -2,9 +2,6 @@
   <h1 align="center">Movie House</h1>
 </div>
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
 [![movie-house.jpg](https://i.postimg.cc/NMgCb8Gf/movie-house.jpg)](https://postimg.cc/5HRm2CFZ)
 
 <div align="center">
@@ -12,6 +9,9 @@
     <a href="https://admiring-franklin-k8vjxuhci.iran.liara.run/">View Demo</a>
   </p>
 </div>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
 Movie House is where you can explore among many famous movies, get the info about movies and the awards, and choose to keep in your archive to watch it later.
 
