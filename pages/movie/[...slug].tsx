@@ -1,17 +1,19 @@
-import axios from "axios";
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import MoviePreview from "../../components/Movie/Moviepreview";
 import { Movie } from "../../types";
+import httpRequest from "../../utils/httpRequest";
 
 interface MoviePage {
   movie: Movie;
 }
 
-const MoviePageWithSlug: React.FC<MoviePage> = ({movie}) => {
-  return <>
-    <MoviePreview movie={movie}/>
-  </>;
+const MoviePageWithSlug: React.FC<MoviePage> = ({ movie }) => {
+  return (
+    <>
+      <MoviePreview movie={movie} />
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -19,17 +21,23 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const id = slug[0];
   const title = slug[1];
 
-  if(!id){
+  if (!id) {
     return {
-      notFound: true
-    }
+      notFound: true,
+    };
   }
 
-  const res = await axios.get(`${process.env.API_BASE_URL}/api/v1/movies/${id}`);
+  const res = await httpRequest(`${process.env.API_BASE_URL}/api/v1/movies/${id}`);
+
+  if (res.status !== 200) {
+    return {
+      notFound: true
+    };
+  }
 
   return {
     props: {
-      movie: res.data
+      movie: res.data,
     },
   };
 };
